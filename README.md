@@ -39,25 +39,25 @@ The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https
 ### NPM
 
 ```bash
-npm add <UNSET>
+npm add @rikalabs/actual
 ```
 
 ### PNPM
 
 ```bash
-pnpm add <UNSET>
+pnpm add @rikalabs/actual
 ```
 
 ### Bun
 
 ```bash
-bun add <UNSET>
+bun add @rikalabs/actual
 ```
 
 ### Yarn
 
 ```bash
-yarn add <UNSET>
+yarn add @rikalabs/actual
 ```
 
 > [!NOTE]
