@@ -1,0 +1,15 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Actual
+  baseServerUrl: https://api.askactual.com
+  versioningStrategy: automatic
+  auth:
+    hoistGlobalSecurity: false
+typescript:
+  version: 0.1.0
+  author: Rika Labs
+  packageName: "@rikalabs/actual"
+  envVarPrefix: ACTUAL
+  moduleFormat: dual
+  clientServerStatusCodesAsErrors: true
+  enableMCPServer: false

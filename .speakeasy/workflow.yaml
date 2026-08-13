@@ -1,0 +1,10 @@
+workflowVersion: 1.0.0
+speakeasyVersion: 1.793.1
+sources:
+  actual-openapi:
+    inputs:
+      - location: $ACTUAL_OPENAPI_LOCATION
+targets:
+  actual-typescript:
+    target: typescript
+    source: actual-openapi
