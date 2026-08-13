@@ -1,0 +1,28 @@
+speakeasyVersion: 1.793.1
+sources:
+    actual-openapi:
+        sourceNamespace: actual-openapi
+        sourceRevisionDigest: sha256:3860007e8603d250e06f7ca1fa371a18dc1e43046f00fcbb35c369f0b346c05a
+        sourceBlobDigest: sha256:af72bca1cfca65be7d3927f89fa05fc9aaa8b5f0fb4a263ea59e53a3c13634e8
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    actual-typescript:
+        source: actual-openapi
+        sourceNamespace: actual-openapi
+        sourceRevisionDigest: sha256:3860007e8603d250e06f7ca1fa371a18dc1e43046f00fcbb35c369f0b346c05a
+        sourceBlobDigest: sha256:af72bca1cfca65be7d3927f89fa05fc9aaa8b5f0fb4a263ea59e53a3c13634e8
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: 1.793.1
+    sources:
+        actual-openapi:
+            inputs:
+                - location: $ACTUAL_OPENAPI_LOCATION
+            registry:
+                location: registry.speakeasyapi.dev/rika-labs-llc/actual/actual-openapi
+    targets:
+        actual-typescript:
+            target: typescript
+            source: actual-openapi

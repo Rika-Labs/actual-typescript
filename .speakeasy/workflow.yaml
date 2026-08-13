@@ -1,10 +1,12 @@
 workflowVersion: 1.0.0
 speakeasyVersion: 1.793.1
 sources:
-  actual-openapi:
-    inputs:
-      - location: $ACTUAL_OPENAPI_LOCATION
+    actual-openapi:
+        inputs:
+            - location: $ACTUAL_OPENAPI_LOCATION
+        registry:
+            location: registry.speakeasyapi.dev/rika-labs-llc/actual/actual-openapi
 targets:
-  actual-typescript:
-    target: typescript
-    source: actual-openapi
+    actual-typescript:
+        target: typescript
+        source: actual-openapi
