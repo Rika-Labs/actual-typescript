@@ -15,6 +15,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist",
+    "src",
+    "FUNCTIONS.md",
+    "RUNTIMES.md"
+  ],
   "type": "module",
   "tshy": {
     "compiler": "tsgo",
