@@ -9,7 +9,7 @@ export interface Env {
 }
 
 export const envSchema: z.ZodMiniType<Env, unknown> = z.object({
-  ACTUAL_DEBUG: z.optional(z.coerce.boolean()),
+  ACTUAL_DEBUG: z.optional(z.boolean()),
 });
 
 /**
@@ -40,9 +40,22 @@ export function env(): Env {
 
   let envObject: Record<string, unknown> = {};
   if (isDeno()) {
-    envObject = globals.Deno?.env?.toObject?.() ?? {};
+    try {
+      envObject = globals.Deno?.env?.toObject?.() ?? {};
+    } catch {
+      // Deno denies environment access unless --allow-env was granted.
+    }
   } else {
     envObject = globals.process?.env ?? {};
+  }
+
+  const debug = envObject["ACTUAL_DEBUG"];
+  if (typeof debug === "string") {
+    if (debug === "true" || debug === "1") {
+      envObject = { ...envObject, ACTUAL_DEBUG: true };
+    } else if (debug === "false" || debug === "0" || debug === "") {
+      envObject = { ...envObject, ACTUAL_DEBUG: false };
+    }
   }
 
   envMemo = envSchema.parse(envObject);
