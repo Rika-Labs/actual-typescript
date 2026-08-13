@@ -28,7 +28,7 @@ jobs:
       set_version: ${{ github.event_name == 'workflow_dispatch' && inputs.set_version || '' }}
       target: actual-typescript
       environment: |
-        ACTUAL_OPENAPI_LOCATION=https://raw.githubusercontent.com/Rika-Labs/actual/main/openapi/actual-v1.openapi.json
+        ACTUAL_OPENAPI_LOCATION=https://docs.askactual.com/openapi/actual-v1.openapi.json
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
